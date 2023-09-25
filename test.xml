@@ -1,0 +1,10 @@
+<config>
+    <subdomains>
+        <subdomain>testdomain</subdomain>
+    </subdomains>
+
+	<cookies>
+        <cookie name="testname1" host="testhost1">testcookie1</cookie>
+        <cookie name="testname2" host="testhost2">testcookie2</cookie>
+	</cookies>
+</config>

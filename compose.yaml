@@ -1,0 +1,21 @@
+services:
+  redis:
+    image: redis:alpine
+  python-app:
+    container_name: pythonContainer
+    build: .
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+  python-test-app:
+    container_name: python-test-container
+    build:
+      context: ./
+      dockerfile: ./testFiles/Dockerfile
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
